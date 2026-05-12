@@ -1,0 +1,36 @@
+{
+  "claudeCode.environmentVariables": [
+    {
+      "name": "ANTHROPIC_BASE_URL",
+      "value": "https://bifrost.sotatek.works/anthropic"
+    },
+    {
+      "name": "ANTHROPIC_AUTH_TOKEN",
+      "value": "sk-bf-1a876093-00fb-4549-8194-a6dbd31740c0"
+    },
+    {
+      "name": "ANTHROPIC_MODEL",
+      "value": "MiniMax/MiniMax-M2.7"
+    },
+    {
+      "name": "ANTHROPIC_DEFAULT_OPUS_MODEL",
+      "value": "MiniMax/MiniMax-M2.7"
+    },
+    {
+      "name": "ANTHROPIC_DEFAULT_SONNET_MODEL",
+      "value": "MiniMax/MiniMax-M2.5"
+    },
+    {
+      "name": "ANTHROPIC_DEFAULT_HAIKU_MODEL",
+      "value": "MiniMax/MiniMax-M2.5-highspeed"
+    },
+    {
+      "name": "CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS",
+      "value": "1"
+    },
+    {
+      "name": "DISABLE_PROMPT_CACHING",
+      "value": "1"
+    }
+  ]
+}
