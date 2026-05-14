@@ -21,7 +21,7 @@ Design a **Resource Management (Setup Resources)** page for the BA Weekly Report
 - Right (3 filters):
   - Division filter dropdown (Tất cả GEX / GEX 1 / GEX 2 / GEX 3 / GEX 4)
   - Rank filter dropdown (Tất cả / Intern / Fresher / Junior / Middle / Lead / Manager)
-  - Trạng thái Effort filter dropdown (Tất cả / Under-allocated / OK / Overloaded)
+  - Trạng thái Effort filter dropdown (Tất cả / Đang rảnh / Đúng effort / Quá tải)
 
 ---
 
@@ -40,9 +40,9 @@ Design a **Resource Management (Setup Resources)** page for the BA Weekly Report
 | Actions | 80px | Edit (pencil) + Delete (trash) icons |
 
 **Trạng thái Effort badge colors:**
-- Under-allocated (< 70%): bg #FEF9C3, text #854D0E
-- OK (70-100%): bg #DCFCE7, text #166534
-- Overloaded (> 100%): bg #FEE2E2, text #991B1B
+- Đang rảnh (< 70%): bg #FEF9C3, text #854D0E
+- Đúng effort (70-100%): bg #DCFCE7, text #166534
+- Quá tải (> 100%): bg #FEE2E2, text #991B1B
 
 **Tổng Effort text color:**
 - < 70%: #EAB308

@@ -38,6 +38,7 @@ Design a **BA Weekly Reporting System — Dashboard** page for a web application
 - Rounded 12px
 - Left side: icon + label "Tổng BA đã báo cáo" (white, 14px) + large number "24/30" (36px, bold, white)
 - Right side: small button "AI Insight" with sparkle icon, white bg, rounded 8px
+  - **Click:** navigates to → Xem báo cáo tuần > Tab "AI Report"
 
 **Below banner — 4 progress cards in a row (evenly spaced):**
 - Each card shows: GEX name + progress format "x/y BA" (x = đã báo cáo, y = tổng BA từ Resource Management)
@@ -47,10 +48,10 @@ Design a **BA Weekly Reporting System — Dashboard** page for a web application
 - GEX4: "6/7 BA" — progress bar green (86%)
 - Card style: white bg, rounded 12px, shadow, padding 16px
 - Progress bar below text: height 6px, rounded, colored by percentage (>=80% green, 50-79% yellow, <50% red)
+- **Click GEX card:** navigates to → Xem báo cáo tuần > Tab "Manually Weekly Report" > filter GEX = clicked GEX
 
 **Below progress cards — Caption text:**
 - "Click vào GEX để xem chi tiết báo cáo" (12px, color #6B7280, italic)
-- Clicking a GEX card navigates to Weekly Report View filtered by that GEX
 
 **Below caption — Card "BA chưa báo cáo":**
 - Header row: title "BA chưa báo cáo" + GEX filter dropdown (Tất cả GEX / GEX 1 / GEX 2 / GEX 3 / GEX 4) aligned right
@@ -78,7 +79,7 @@ Design a **BA Weekly Reporting System — Dashboard** page for a web application
 - Legend below chart: colored dots + label + count + percentage
 - Sample data: Research/Presale 4 (17%), Design 3 (12%), Development 10 (42%), Deployment 3 (12%), Maintenance 3 (12%), Pending 1 (4%)
 - Hover: hovering a segment shows tooltip with count (e.g., "Development: 10 dự án")
-- Click: clicking a segment navigates to Weekly Report View filtered by that status
+- **Click segment:** navigates to → Xem báo cáo tuần > Tab "Manually Weekly Report" > filter Trạng thái = clicked status
 - Card style: white bg, rounded 12px, shadow, padding 20px
 - Title: "Tổng quan dự án theo trạng thái" (14px, bold)
 
@@ -96,7 +97,7 @@ Design a **BA Weekly Reporting System — Dashboard** page for a web application
   - GEX2 (7 BA): 0 Quá tải (0%), 6 Đúng effort (86%), 1 Đang rảnh (14%)
   - GEX3 (8 BA): 2 Quá tải (25%), 4 Đúng effort (50%), 2 Đang rảnh (25%)
   - GEX4 (7 BA): 1 Quá tải (14%), 5 Đúng effort (72%), 1 Đang rảnh (14%)
-- Click: clicking a segment navigates to Resource Management filtered by that status (Quá tải / Đúng effort / Đang rảnh)
+- **Click segment:** navigates to → Quản lý nhân sự > filter Trạng thái Effort = clicked status (Quá tải / Đúng effort / Đang rảnh)
 - Bar height: 28px, rounded ends, gap between bars: 16px
 - Card style: white bg, rounded 12px, shadow, padding 20px
 - Title: "Tổng quan nguồn lực theo GEX" (14px, bold)
@@ -118,10 +119,11 @@ Design a **BA Weekly Reporting System — Dashboard** page for a web application
 **Card 2: "BA cần hỗ trợ"**
 - Header: title + orange badge count "3"
 - Icon: hand-raise icon
-- List items with brief support content (each item is clickable → navigates to detail report of that project):
-  - "Lê Văn C — GEX1 — Dự án Alpha — Cần hỗ trợ review SRS" → click vào đi đến báo cáo chi tiết Dự án Alpha
-  - "Phạm D — GEX4 — Dự án Beta — Blocked bởi khách hàng" → click vào đi đến báo cáo chi tiết Dự án Beta
-  - "Hoàng E — GEX2 — Dự án Gamma — Cần pair với senior" → click vào đi đến báo cáo chi tiết Dự án Gamma
+- List items with brief support content (each item is clickable):
+  - "Lê Văn C — GEX1 — Dự án Alpha — Cần hỗ trợ review SRS"
+  - "Phạm D — GEX4 — Dự án Beta — Blocked bởi khách hàng"
+  - "Hoàng E — GEX2 — Dự án Gamma — Cần pair với senior"
+- **Click row:** navigates to → Xem báo cáo tuần > Tab "Manually Weekly Report" > search = tên dự án (chỉ hiển thị báo cáo của project đó)
 - Hover state: underline text, cursor pointer
 
 **Card 3: "BA quá tải"**
@@ -159,7 +161,8 @@ Design a **BA Weekly Reporting System — Dashboard** page for a web application
 
 **Sort:** "Nghiêm trọng" rows on top, then "Rủi ro".
 
-**Row interaction:** Each row is clickable → navigates to detail report of that project. Hover: bg #F3F4F6, cursor pointer.
+**Row interaction:** Each row is clickable. Hover: bg #F3F4F6, cursor pointer.
+- **Click row:** navigates to → Xem báo cáo tuần > Tab "Manually Weekly Report" > search = tên dự án (chỉ hiển thị báo cáo của project đó)
 
 **Table style:**
 - Header row: bg #F9FAFB, uppercase 12px, color #6B7280

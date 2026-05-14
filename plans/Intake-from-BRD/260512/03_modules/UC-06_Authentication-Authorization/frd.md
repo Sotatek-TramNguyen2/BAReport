@@ -38,6 +38,12 @@
   - Lead → BAL
   - Intern/Fresher/Junior/Middle → BA Member
 
+**Khi thay đổi Rank (tại UC-03 Resource Management):**
+- Hệ thống tự động cập nhật role và permission của user ngay lập tức.
+- Ví dụ: BA Member (rank Junior) được đổi rank lên Lead → role chuyển thành BAL → user có thêm quyền truy cập Resource Management, Report View & AI Summarize, v.v.
+- Không cần logout/login lại. Session hiện tại tự nhận role mới.
+- Sidebar navigation tự động cập nhật hiển thị theo quyền mới.
+
 ### 3.2 Permission matrix
 
 | Module / Action | DM | BAM | BAL | BA Member |
@@ -65,3 +71,4 @@
 | BR-27 | Email phải tồn tại trong Master Data Resources mới được vào hệ thống |
 | BR-28 | Role xác định bởi Rank trong Resources, không có UI riêng để gán role |
 | BR-29 | 1 user = 1 role (không multi-role) |
+| BR-30 | Khi Rank thay đổi (tại UC-03), role và permission cập nhật real-time, không cần re-login |

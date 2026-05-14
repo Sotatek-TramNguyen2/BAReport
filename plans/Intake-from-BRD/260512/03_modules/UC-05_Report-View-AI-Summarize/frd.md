@@ -7,7 +7,7 @@
 | Module | UC-05 Report View & AI Summarize |
 | Mục đích | Xem báo cáo tuần, AI tự động tóm tắt & đánh giá |
 | Actors | DM (A-01), BAM (A-02), BAL (A-03), System/AI (A-05) |
-| FRs covered | FR-25, FR-26, FR-27, FR-28, FR-29, FR-30, FR-31, FR-32 |
+| FRs covered | FR-25, FR-26, FR-27, FR-28, FR-31, FR-32 |
 
 ## 2. Màn hình & Layout
 
@@ -37,63 +37,55 @@
 | Cột | Kiểu dữ liệu | Mô tả |
 | --- | --- | --- |
 | Dự án | Text | Tên dự án |
-| BA | Text | Tên BA(s) đã report |
-| Effort % | Number | Effort thực tế BA báo cáo |
-| Kết quả tuần qua (Last Week) | Text | Nội dung text |
-| Kế hoạch tuần tới (Next Week) | Text | Nội dung text |
+| GEX | Tag | GEX1-4 |
+| Trạng thái | Badge | Status dự án hiện tại |
+| Kết quả tuần qua | Text | Nội dung text |
+| Kế hoạch tuần tới | Text | Nội dung text |
 | Risk & Blocker | Text | Nội dung text |
-| Need Help | Badge | Có/Không |
+| Cần hỗ trợ | Text | Nếu có: ghi rõ nội dung yêu cầu hỗ trợ. Nếu không: "Không" |
+
+**Filter:**
+- GEX filter (GEX 1 / GEX 2 / GEX 3 / GEX 4, không có "Tất cả", default GEX 1)
+- Trạng thái dự án filter (multi-select)
+- Search tên dự án (FR-32): filter realtime khi gõ
 
 **Hành vi:**
-- Search tên dự án (FR-32): filter realtime khi gõ
 - Group by dự án khi nhiều BA cùng report 1 project
 - Expandable row để xem full text
 
-### 2.3 Tab: AI Report per project/GEX (FR-26, FR-27, FR-28, FR-29)
+### 2.3 Tab: AI Report per project/GEX (FR-26, FR-27, FR-28)
 
 **Layout 2 sections xếp dọc:**
 
-#### Section 1: AI Report tổng hợp cho GEX (trên cùng) — FR-28
+#### Section 1: Tóm tắt báo cáo BA của GEX [xx] (trên cùng) — FR-28
 
 **Hiển thị dạng Executive Summary:**
 
 ```
-🔥 High-Priority Risks (Dự án/Task Đỏ)
+🔥 Risk nghiêm trọng
 - [Tên Dự án] — [Vấn đề cốt lõi]
 - ...
 
-⚠️ Potential Risks (Dự án/Task Vàng)
+⚠️ Có khả năng ảnh hưởng
 - [Tên Dự án] — [Vấn đề tiềm ẩn]
 - ...
-
-🚑 Member Health Check
-- Overloaded: [Danh sách BA]
-- Bad week (Rating 1-2): [Danh sách BA]
-- Cần hỗ trợ: [Danh sách BA]
 ```
 
-#### Section 2: AI Report chi tiết từng dự án (bên dưới) — FR-26, FR-27, FR-29
+#### Section 2: Dự án không báo cáo
+
+Danh sách các dự án thuộc GEX đang active nhưng không có BA nào submit report tuần này.
+
+#### Section 3: AI Report chi tiết từng dự án (bên dưới) — FR-26, FR-27
 
 **Mỗi dự án hiển thị 1 card:**
 
 | Field | Mô tả | Nguồn AI |
 | --- | --- | --- |
-| Project/Task | Tên dự án | Master Data |
-| BA in Charge | Danh sách BA | Master Data |
-| Đánh giá | RED / YELLOW / GREEN badge | AI keyword analysis (FR-27) |
-| Key Achievements | Tóm tắt kết quả tuần qua (2-3 dòng) | AI từ "Last Week" + "Summary" |
-| Next Steps | Tóm tắt kế hoạch tuần tới | AI từ "Next Week" |
-| Key Blocker | Rủi ro cốt lõi hoặc "Không có" | AI từ "Risk & Blocker" |
-| Effort Validation | ✅ Logical / ⚠️ Anomaly Alert | AI cross-check (FR-29) |
+| Dự án | Tên dự án | Master Data |
+| BA phụ trách | Danh sách BA | Master Data |
+| Tóm tắt AI | Tóm tắt tổng hợp từ Kết quả tuần qua + Kế hoạch tuần tới + Risk & Blocker + Cần hỗ trợ (2-4 dòng, không chia nhỏ) | AI gen |
 
-**Effort Validation detail (FR-29):**
-
-| Trạng thái | Điều kiện |
-| --- | --- |
-| ✅ Logical | Effort % tương xứng với khối lượng text mô tả |
-| ⚠️ Cao bất thường | Effort 80-100% nhưng mô tả công việc ít/đơn giản |
-| ⚠️ Thấp bất thường | Effort 10-20% nhưng mô tả công việc nhiều/phức tạp |
-| ⚠️ Chênh lệch với Quản lý | Effort BA tự báo cáo khác effort được phân bổ trong M-02 |
+**Lưu ý:** AI tóm tắt toàn bộ nội dung báo cáo thành 1 đoạn văn ngắn gọn, KHÔNG chia thành Key Achievements / Next Steps / Key Blocker riêng biệt. Không có Effort Validation.
 
 ### 2.4 Tab: Presale Report (FR-30, FR-32)
 
@@ -125,37 +117,34 @@
 
 | Data | Nguồn |
 | --- | --- |
-| Last Week (text) | Weekly Report Submission |
-| Next Week (text) | Weekly Report Submission |
+| Kết quả tuần qua (text) | Weekly Report Submission |
+| Kế hoạch tuần tới (text) | Weekly Report Submission |
 | Risk & Blocker (text) | Weekly Report Submission |
-| Effort % (number) | Weekly Report Submission |
-| Effort phân bổ (number) | Project Management (M-02) |
+| Cần hỗ trợ (text) | Weekly Report Submission |
 | Project Summary | Project Management (M-02) |
 | End Date | Project Management (M-02) |
 
-### 3.3 Tiêu chí đánh giá RED/YELLOW/GREEN (FR-27)
+### 3.3 Tiêu chí đánh giá (FR-27)
 
 | Mức | Keywords / Signals |
 | --- | --- |
-| 🔴 RED | "sai logic", "miss requirement", "khách hàng phàn nàn", "bug nghiêm trọng", blocker không thể tự giải quyết, quá End Date |
-| 🟡 YELLOW | "miss edge cases", "sửa lại nhiều lần", "delay response", "chậm trễ", tiến độ chệch nhẹ |
-| 🟢 GREEN | Không có risk, output rõ ràng, kết quả khớp kế hoạch, team không phàn nàn |
+| 🔥 Risk nghiêm trọng | "sai logic", "miss requirement", "khách hàng phàn nàn", "bug nghiêm trọng", blocker không thể tự giải quyết, quá End Date |
+| ⚠️ Có khả năng ảnh hưởng | "miss edge cases", "sửa lại nhiều lần", "delay response", "chậm trễ", tiến độ chệch nhẹ |
+
+**Lưu ý:** Không còn badge RED/YELLOW/GREEN trên từng card dự án. Tiêu chí chỉ dùng để phân loại dự án vào section "Risk nghiêm trọng" hoặc "Có khả năng ảnh hưởng" trong Executive Summary.
 
 ### 3.4 AI Output Format
 
-**Per project:**
+**Per project (tóm tắt tổng hợp):**
 ```
-- Project/Task: [Tên] — BA in Charge: [Tên BA]
-- Key Achievements: [2-3 dòng tóm tắt]
-- Next Steps: [1-2 dòng]
-- Key Blocker: [Rút trích hoặc "Không có"]
+- Dự án: [Tên] — BA phụ trách: [Tên BA]
+- Tóm tắt: [2-4 dòng tổng hợp từ Kết quả + Kế hoạch + Risk + Cần hỗ trợ]
 ```
 
-**Per GEX:**
+**Per GEX (executive summary):**
 ```
-- 🔥 High-Priority Risks: [List dự án RED]
-- ⚠️ Potential Risks: [List dự án YELLOW]
-- 🚑 Member Health Check: [Overloaded / Bad week / Cần hỗ trợ]
+- 🔥 Risk nghiêm trọng: [List dự án có vấn đề nghiêm trọng]
+- ⚠️ Có khả năng ảnh hưởng: [List dự án có rủi ro tiềm ẩn]
 ```
 
 ### 3.5 AI Model Configuration
@@ -173,13 +162,13 @@
 | --- | --- |
 | BR-21 | AI generate ngay sau BA submit, không cần approval |
 | BR-22 | AI report được cache theo tuần + GEX, invalidate khi có submit mới |
-| BR-23 | RED đánh giá → tự động xuất hiện trong Dashboard Risk Tracking |
-| BR-24 | Effort Anomaly chỉ là cảnh báo, không block BA submit |
-| BR-25 | Presale Report là manual entry bởi Quản lý, không liên quan AI |
+| BR-23 | Dự án có risk nghiêm trọng → tự động xuất hiện trong Dashboard Risk Tracking |
+| BR-24 | Dự án active không có report tuần này → hiển thị trong section "Dự án không báo cáo" |
+| BR-25 | Presale Report đã chuyển sang UC-04 |
 
 ## 5. Phân quyền
 
 | Actor | Quyền |
 | --- | --- |
-| DM, BAM, BAL | View tất cả tabs, CRUD Presale Report |
+| DM, BAM, BAL | View tất cả tabs |
 | BA Member | Không truy cập module này (xem report qua Dashboard) |
