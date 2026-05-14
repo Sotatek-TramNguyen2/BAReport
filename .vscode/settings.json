@@ -10,19 +10,19 @@
     },
     {
       "name": "ANTHROPIC_MODEL",
-      "value": "MiniMax/MiniMax-M2.7"
+      "value": "fridayaix/claude-opus-4-7"
     },
     {
       "name": "ANTHROPIC_DEFAULT_OPUS_MODEL",
-      "value": "MiniMax/MiniMax-M2.7"
+      "value": "fridayaix/claude-opus-4-7"
     },
     {
       "name": "ANTHROPIC_DEFAULT_SONNET_MODEL",
-      "value": "MiniMax/MiniMax-M2.5"
+      "value": "fridayaix/claude-sonnet-4-6"
     },
     {
       "name": "ANTHROPIC_DEFAULT_HAIKU_MODEL",
-      "value": "MiniMax/MiniMax-M2.5-highspeed"
+      "value": "fridayaix/claude-haiku-4-5-20251001"
     },
     {
       "name": "CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS",

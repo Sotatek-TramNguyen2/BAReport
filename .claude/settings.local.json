@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Rename-Item \"c:\\\\Users\\\\admin\\\\Desktop\\\\BA Skills\\\\plans\\\\Intake-from-BRD\\\\260512\\\\03_modules\\\\UC-01_Dashboard\\\\prompt-figma-make.md\" \"UC-01-Figma-Make-Prompt.md\")",
+      "PowerShell(Rename-Item \"c:\\\\Users\\\\admin\\\\Desktop\\\\BA Skills\\\\plans\\\\Intake-from-BRD\\\\260512\\\\03_modules\\\\UC-02_Project-Management\\\\prompt-figma-make.md\" \"UC-02-Figma-Make-Prompt.md\")"
+    ]
+  }
+}
