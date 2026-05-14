@@ -4,7 +4,7 @@
 
 Design a **Resource Management (Setup Resources)** page for the BA Weekly Reporting System. This page allows managers to manage BA personnel list and monitor effort allocation.
 
-**Shared elements:** Sidebar, page structure, font, colors, card styles, table styles, dropdown styles, button styles — follow exactly as UC-01 Dashboard. Do NOT redefine these. Only "Resources" nav item is active in sidebar.
+**Shared elements:** Sidebar, page structure, font, colors, card styles, table styles, dropdown styles, button styles — follow exactly as UC-01 Dashboard. Do NOT redefine these. Only "Quản lý nhân sự" nav item is active in sidebar.
 
 ---
 

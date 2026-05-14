@@ -15,12 +15,10 @@ Design a **BA Weekly Reporting System — Dashboard** page for a web application
 - Top: SotaTek logo
 - Navigation items (white text, 14px Inter):
   - Dashboard (active — highlighted with #EFF6FF bg, #2563EB text)
-  - Projects
-  - Resources
-  - Weekly Report
-  - Report & AI
-  - Presale Report
-  - Data Export
+  - Tạo báo cáo tuần
+  - Xem báo cáo tuần
+  - Quản lý dự án
+  - Quản lý nhân sự
 - Bottom: User avatar circle + email truncated (e.g., "buihuong@sotatek.c...") + settings gear icon
 
 ### Main Content Area

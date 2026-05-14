@@ -4,7 +4,7 @@
 
 Design a **Project Management (Setup BA Projects)** page for the BA Weekly Reporting System. This page allows managers to create/edit projects and manage BA effort allocation across projects.
 
-**Shared elements:** Sidebar, page structure, font, colors, card styles, table styles, dropdown styles, button styles — follow exactly as UC-01 Dashboard. Do NOT redefine these. Only "Projects" nav item is active in sidebar.
+**Shared elements:** Sidebar, page structure, font, colors, card styles, table styles, dropdown styles, button styles — follow exactly as UC-01 Dashboard. Do NOT redefine these. Only "Quản lý dự án" nav item is active in sidebar.
 
 ---
 
