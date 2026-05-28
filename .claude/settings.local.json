@@ -2,7 +2,16 @@
   "permissions": {
     "allow": [
       "PowerShell(Rename-Item \"c:\\\\Users\\\\admin\\\\Desktop\\\\BA Skills\\\\plans\\\\Intake-from-BRD\\\\260512\\\\03_modules\\\\UC-01_Dashboard\\\\prompt-figma-make.md\" \"UC-01-Figma-Make-Prompt.md\")",
-      "PowerShell(Rename-Item \"c:\\\\Users\\\\admin\\\\Desktop\\\\BA Skills\\\\plans\\\\Intake-from-BRD\\\\260512\\\\03_modules\\\\UC-02_Project-Management\\\\prompt-figma-make.md\" \"UC-02-Figma-Make-Prompt.md\")"
+      "PowerShell(Rename-Item \"c:\\\\Users\\\\admin\\\\Desktop\\\\BA Skills\\\\plans\\\\Intake-from-BRD\\\\260512\\\\03_modules\\\\UC-02_Project-Management\\\\prompt-figma-make.md\" \"UC-02-Figma-Make-Prompt.md\")",
+      "PowerShell(node --version)",
+      "PowerShell(winget install OpenJS.NodeJS.LTS --accept-package-agreements --accept-source-agreements)",
+      "PowerShell(winget install OpenJS.NodeJS.LTS --source winget --accept-package-agreements --accept-source-agreements)",
+      "PowerShell($env:Path = [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\) + \";\" + [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); node --version)",
+      "PowerShell($env:Path = [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\) + \";\" + [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); Set-Location \"c:\\\\Users\\\\admin\\\\Desktop\\\\BA Skills\\\\BA Report\"; npm install)",
+      "PowerShell($env:Path = [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\) + \";\" + [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); Set-Location \"c:\\\\Users\\\\admin\\\\Desktop\\\\BA Skills\\\\BA Report\"; Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass; npm install)",
+      "PowerShell($env:Path = [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\) + \";\" + [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); cmd /c \"cd /d `\"c:\\\\Users\\\\admin\\\\Desktop\\\\BA Skills\\\\BA Report`\" && npm install 2>&1\")",
+      "PowerShell(Get-Process -Name \"node\" -ErrorAction SilentlyContinue)",
+      "PowerShell($env:Path = [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\) + \";\" + [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); & \"C:\\\\Program Files\\\\nodejs\\\\node.exe\" \"C:\\\\Program Files\\\\nodejs\\\\node_modules\\\\npm\\\\bin\\\\npm-cli.js\" install --prefix \"c:\\\\Users\\\\admin\\\\Desktop\\\\BA Skills\\\\BA Report\")"
     ]
   }
 }
