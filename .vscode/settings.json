@@ -2,7 +2,7 @@
   "claudeCode.environmentVariables": [
     {
       "name": "ANTHROPIC_BASE_URL",
-      "value": "https://bifrost.sotatek.works/anthropic"
+      "value": "http://127.0.0.1:3817/anthropic"
     },
     {
       "name": "ANTHROPIC_AUTH_TOKEN",
